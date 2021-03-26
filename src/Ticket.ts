@@ -37,14 +37,14 @@ export default class Ticket extends EventEmitter {
     this.emit('started');
   }
 
-  failed(msg) {
+  failed(msg: string) {
     this.isFailed = true;
     this.isFinished = true;
     this.status = 'failed';
     this.emit('failed', msg);
   }
 
-  finish(result) {
+  finish(result: any) {
     this.eta.done = this.eta.count;
     this.isFinished = true;
     this.status = 'finished';
@@ -62,7 +62,7 @@ export default class Ticket extends EventEmitter {
     this.emit('stopped');
   }
 
-  progress(progress) {
+  progress(progress: any) {
     this.eta.done = progress.complete;
     this.eta.count = progress.total;
     this.emit('progress', {
