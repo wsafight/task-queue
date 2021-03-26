@@ -1,3 +1,3 @@
-export default class TaskQueue{
+export default class TaskQueue {
 
 }
